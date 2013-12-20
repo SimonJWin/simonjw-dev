@@ -1,0 +1,47 @@
+# Use a better prefix:
+set -g prefix C-a
+unbind C-b
+
+# Send prefix to other apps:
+bind C-a send-prefix
+
+# Change the default delay:
+set -sg escape-time 1
+
+# Set the window and panes index
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Split windows with more logical keys
+unbind %
+bind | split-window -h
+bind - split-window -v
+
+# Remap movement keys to VIM ones
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+set-window-option -g mode-mouse on
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
+set-option -g mouse-select-pane on
+
+# easily toggle synchronization (mnemonic: e is for echo)
+bind e setw synchronize-panes on
+bind E setw synchronize-panes off
+
+# Vim-like copying
+set-window-option -g mode-keys vi
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+
+# instructs tmux to expect UTF-8 sequences
+setw -g utf8 on
+set -g status-utf8 on
+
+# Use normal characters to draw lines - PuTTy fix
+set-option -ga terminal-overrides ',*:enacs@:smacs@:rmacs@:acsc@'
+
+# 256 color support
+set -g default-terminal "screen-256color"

@@ -1,0 +1,32 @@
+[alias]
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(blue)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    lg = !"git lg1"
+    co = checkout
+    br = branch
+    count   = !git shortlog -sn
+    ss = submodule status
+
+[user]
+    name = "<%= node[:gituser][:name] %>"
+    email = "<%= node[:gituser][:email] %>"
+
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+
+[apply]
+        whitespace = nowarn
+
+[mergetool]
+        keepBackup = false
+[difftool]
+        prompt = false
+[help]
+        autocorrect = 1
