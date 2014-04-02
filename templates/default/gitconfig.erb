@@ -6,6 +6,7 @@
     br = branch
     count   = !git shortlog -sn
     ss = submodule status
+    serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
 
 [user]
     name = "<%= node[:gituser][:name] %>"
@@ -30,3 +31,6 @@
         prompt = false
 [help]
         autocorrect = 1
+
+[rerere]
+        enabled = true

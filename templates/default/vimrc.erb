@@ -47,6 +47,11 @@ Bundle 'tomasr/molokai'
 Bundle 'davidhalter/jedi-vim'
 " A nice buffer viewer
 Bundle 'jeetsukumaran/vim-buffergator'
+" Golang
+Bundle 'jnwhiteh/vim-golang'
+" Metaswitch trace formatter
+Bundle 'file:///home/gulfstream/.vim/sjw_plugins/traceformat'
+Bundle 'ssh://git@gitlab.datcon.co.uk/vimips.git'
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -74,7 +79,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-set smartindent
+set cindent
 autocmd FileType c setlocal shiftwidth=2 tabstop=2
 autocmd FileType cpp setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
