@@ -20,3 +20,6 @@ package "curl"
 package "sudo"
 package "pylint"
 package "pep8"
+if node["platform"] == "ubuntu" and node["platform_version"].to_f > 13.10
+  package "silversearcher-ag"
+end
