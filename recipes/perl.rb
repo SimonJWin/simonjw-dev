@@ -1,5 +1,5 @@
 package "cpanminus"
-package "libcurses5-dev"
+package "libncurses5-dev"
 execute "Installing Perl modules..." do
 	command "cpanm --sudo Term::Animation"
   action :run
