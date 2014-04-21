@@ -32,7 +32,7 @@ else
 
   execute "build_silver_searcher" do
     user node["username"]
-    cwd node["home_dir"] + "./the_silver_searcher.git"
+    cwd node["home_dir"] + "/.the_silver_searcher.git"
     command "./build.sh"
     timeout 60
     action :nothing
@@ -43,7 +43,7 @@ else
   end
 
   execute "install_silver_searcher" do
-    cwd node["home_dir"] + "./the_silver_searcher.git"
+    cwd node["home_dir"] + "/.the_silver_searcher.git"
     command "make install"
     timeout 60
     action :nothing
