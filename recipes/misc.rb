@@ -6,17 +6,10 @@ package "ncurses-term"
 
 # The generic log colorizer
 package "grc"
-
-package "cpanminus"
 package "build-essential"
-package "python"
-package "python-dev"
-package "cython"
-package "python-virtualenv"
-package "python-setuptools"
-package "python-pkg-resources"
 package "cmake"
 package "curl"
 package "sudo"
-package "pylint"
-package "pep8"
+if node["platform"] == "ubuntu" and node["platform_version"].to_f > 13.10
+  package "silversearcher-ag"
+end
