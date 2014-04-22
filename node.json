@@ -1,0 +1,5 @@
+{
+  "run_list": [ "recipe[simonjw-dev::default]" ],
+  "gituser" : {"name" : "Simon Wingrove",
+               "email" : "simonjw@xxxxxxxxx"}
+}
