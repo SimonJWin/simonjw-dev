@@ -54,6 +54,8 @@ Bundle 'jnwhiteh/vim-golang'
 " Bundle 'ssh://git@gitlab.datcon.co.uk/vimips.git'
 " Silver Searcher
 Bundle 'rking/ag.vim'
+" Tagbar
+Bundle 'majutsushi/tagbar'
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -181,6 +183,9 @@ silent! colorscheme molokai
 " Powerline
 set laststatus=2
 set encoding=utf-8
+
+" Tagbar
+nmap <F8> :tagbarToggle<CR>
 
 " Textwidth
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h set textwidth=79
