@@ -191,3 +191,10 @@ nmap <F8> :tagbarToggle<CR>
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h set textwidth=79
 set colorcolumn=+1
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
+
+" Allow "%%" to mean path of current file in command line
+cabbr <expr> %% expand('%:p:h')
+
+" No file.c~ files.  They are super-annoying, and we have git now.
+set nobackup
+set nowritebackup
