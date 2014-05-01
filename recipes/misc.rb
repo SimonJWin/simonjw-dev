@@ -7,7 +7,9 @@ package "ncurses-term"
 # The generic log colorizer
 package "grc"
 package "build-essential"
+package "gdb"
 package "cmake"
+package "unzip"
 package "curl"
 package "sudo"
 if node["platform"] == "ubuntu" and node["platform_version"].to_f > 13.10
