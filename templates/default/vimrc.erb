@@ -17,45 +17,54 @@ endif
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+" Begin using Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 filetype off
-filetype plugin indent on
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
+" Golang development tools
+Plugin 'fatih/vim-go'
 " Press ctrl-p for a quick-open list with fuzzy matching
-Bundle 'kien/ctrlp.vim'
- " Support for Markdown syntax
-Bundle 'plasticboy/vim-markdown'
- " Display compilation errors in the left margin
-Bundle 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+" Support for Markdown syntax
+Plugin 'plasticboy/vim-markdown'
+" Support for JSON
+Plugin 'helino/vim-json'
+" Display compilation errors in the left margin
+Plugin 'scrooloose/syntastic'
 " Deep Git integration
-Bundle 'tpope/vim-fugitive' 
- " Git diff markings in the left margin
-" Bundle 'airblade/vim-gitgutter' "[SJW 29-Jul-2013] FIXME: GitGutter freezes when opening N-BASE files, apparently...
+Plugin 'tpope/vim-fugitive' 
+" Git diff markings in the left margin
+" [SJW 29-Jul-2013] FIXME: GitGutter freezes in large repos.
+Plugin 'airblade/vim-gitgutter' 
 " Better status bar
-Bundle 'Lokaltog/vim-powerline' 
+Plugin 'Lokaltog/vim-powerline' 
  " Some useful commands like :SudoWrite
-Bundle 'tpope/vim-eunuch'
+Plugin 'tpope/vim-eunuch'
 " Molokai color scheme
-Bundle 'tomasr/molokai' 
+Plugin 'tomasr/molokai' 
  " YCM is good but requires recompiling VIM. Let's use just the pythonic part, Jedi-vim.
  " If you can be bothered, worth recompiling VIM to get YCM
-" Bundle 'Valloric/YouCompleteMe'
-Bundle 'davidhalter/jedi-vim'
+" Plugin 'Valloric/YouCompleteMe'
+" Python autocompletion (usurped by YCM if using it)
+Plugin 'davidhalter/jedi-vim'
 " A nice buffer viewer
-Bundle 'jeetsukumaran/vim-buffergator'
-" Golang
-Bundle 'jnwhiteh/vim-golang'
+Plugin 'jeetsukumaran/vim-buffergator'
 " Metaswitch trace formatter
-" Bundle 'file:///home/gulfstream/.vim/sjw_plugins/traceformat'
-" Bundle 'ssh://git@gitlab.datcon.co.uk/vimips.git'
+" Plugin 'file:///home/gulfstream/.vim/sjw_plugins/traceformat'
+" Plugin 'ssh://git@gitlab.datcon.co.uk/vimips.git'
 " Silver Searcher
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 " Tagbar
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
+" NERDTree
+Plugin 'scrooloose/nerdtree'
+
+" Two lines mandatory for Vundle finishing
+call vundle#end()
+filetype plugin indent on
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
