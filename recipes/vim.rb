@@ -9,8 +9,8 @@ end
 
 execute "install_vundle" do
 	user node["username"]
-	command "git clone https://github.com/gmarik/vundle.git " + node["home_dir"] + "/.vim/bundle/vundle"
-	not_if do ::File.directory?(node["home_dir"] + '/.vim/bundle/vundle') end
+	command "git clone https://github.com/gmarik/Vundle.vim " + node["home_dir"] + "/.vim/bundle/Vundle.vim"
+	not_if do ::File.directory?(node["home_dir"] + '/.vim/bundle/Vundle.vim') end
 	notifies :run, "execute[run_vundle_bundleinstall]"
 	action :run
 	# [SJW] Chef-solo doesn't setup environment correctly.  Work around.
@@ -20,7 +20,7 @@ end
 
 execute "run_vundle_bundleinstall" do
 	user node["username"]
-	command "vim +BundleInstall +qall"
+	command "vim +PluginInstall +qall"
 	timeout 60
 	action :nothing
 
