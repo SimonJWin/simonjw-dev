@@ -204,6 +204,9 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 " Allow "%%" to mean path of current file in command line
 cabbr <expr> %% expand('%:p:h')
 
+" Auto-find tag files
+set tags=./tags;/
+
 " No file.c~ files.  They are super-annoying, and we have git now.
 set nobackup
 set nowritebackup
