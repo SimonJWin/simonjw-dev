@@ -133,8 +133,25 @@ if [ -f ~/.restyf ]; then
     . ~/.restyf
 fi
 
+# Use VIM's pager
+alias lev=`find /usr/share/vim -name less.sh -print`
+
+# This is how "ps" should look by default!
+alias pl='ps fax'
+
+<% if node['platform'] == 'mac_os_x' -%>
+alias vim='mvim -v'
+alias vi='mvim -v'
+
+# On a mac, use GNU ls rather than OSX's ls
+CLICOLOR=1
+eval `gdircolors /Users/simonjw/.dircolors`
+alias ls='gls --color'
+<% else -%>
+eval `dircolors <%= node["home_dir"] %>/.dircolors`
+<% end -%>
+
 # Add bin directory in home to path
 PATH=$PATH:<%= node["home_dir"] %>/bin
 export PATH
 
-eval `dircolors <%= node["home_dir"] %>/.dircolors`
